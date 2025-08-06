@@ -20,7 +20,7 @@
     }
 
     body {
-      background: linear-gradient(135deg, #1b1b2f, #162447, #1f4068);
+      background: #000;
       position: relative;
     }
 
@@ -33,21 +33,19 @@
       align-items: center;
     }
 
-    /* Abstract Background with Animated Shapes */
+    /* Abstract image background */
     .abstract-bg {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.05), transparent 40%),
-                  radial-gradient(circle at 70% 60%, rgba(255, 255, 255, 0.05), transparent 40%),
-                  #1a1a2e;
+      background: url('background.jpg') no-repeat center center;
+      background-size: cover;
       z-index: 0;
-      overflow: hidden;
+      opacity: 0.8;
     }
 
-    /* Logo pop-in animation */
     .logo, .poster {
       position: absolute;
       max-width: 90%;
@@ -80,27 +78,27 @@
       opacity: 1;
       z-index: 3;
     }
-
   </style>
 </head>
 <body>
 
   <div class="container">
+    <!-- Background image -->
     <div class="abstract-bg"></div>
 
-    <!-- Logo Image -->
+    <!-- Logo -->
     <img src="logo.png" alt="Riff & Rhythm Logo" class="logo" id="logo">
 
-    <!-- Poster Image -->
+    <!-- Poster -->
     <img src="poster.jpg" alt="Riff & Rhythm Poster" class="poster" id="poster">
   </div>
 
   <script>
-    // Switch from logo to poster after 0.5 seconds
+    // After 2 seconds, hide logo and show poster
     setTimeout(() => {
       document.getElementById('logo').style.opacity = '0';
       document.getElementById('poster').classList.add('show-poster');
-    }, 500); // half a second
+    }, 2000); // 2 seconds
   </script>
 
 </body>
